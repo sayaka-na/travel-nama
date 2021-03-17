@@ -1,3 +1,170 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@charset "utf-8";
+// 投稿一覧
+.posts-index {
+  min-height: 100vh;
+  background-color: rgb(237, 237, 238);
+}
+img {
+  width: 100%;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+a:hover {
+  opacity: 0.7;
+}
+.container {
+  width: 90%;
+}
+// ================================
+
+.card-img-top {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+}
+.posts-index {
+  font-family: serif;
+  line-height: 1.6;
+}
+.new-title h1 {
+  font-size: 30px;
+  padding: 5px 10px;
+}
+// カード===================================
+
+.card-index-title {
+  text-decoration: none;
+  font-size: 22px;
+  color: #333;
+}
+// =============================
+.card-user {
+  align-items: center;
+}
+
+.favorite-icon {
+  font-size: 18px;
+  display: inline-block;
+  margin: 3px 5px;
+}
+.fa-heart {
+  margin-right: 3px;
+}
+.card-body img {
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  width:  30px;       /* ※縦横を同値に */
+  height: 30px;       /* ※縦横を同値に */
+  border: 1px solid rgb(156, 155, 155);
+  margin: 3px;
+}
+.card-user-nickname {
+  padding-top: 5px;
+  display: inline-block;
+}
+.btn-light {
+  margin-left: 5px;
+}
+
+// サイドバー===================================
+.btn-group:hover >.dropdown-menu {
+  display: block;
+}
+.btn-group {
+  margin: 15px;
+}
+.btn-group button {
+  padding: 8px 40px;
+  
+}
+.index-link {
+  text-align: end;
+}
+
+
+
+
+@media (min-width: 1201px) {
+  
+}
+@media (max-width: 1200px) {
+  
+}
+@media (max-width: 992px) {
+  
+}
+@media (max-width: 768px) {
+  .card-index-title {
+    font-size: 15px;
+  }
+  .card-img-top {
+    max-height: 120px;
+  }
+  .card-user-nickname {
+    font-size: 15px;
+  }
+  .favorite-icon {
+    font-size: 15px;
+  }
+  .fa-heart {
+    margin-right: 2px;
+  }
+  // card-subject
+  .card-body p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 576px) {
+  
+  .card-body img {
+    width:  20px;       /* ※縦横を同値に */
+    height: 20px;       /* ※縦横を同値に */   
+  }
+  .card-index-title {
+    font-size: 12px;
+  }
+  .card-img-top {
+    max-height: 110px;
+  }
+  // card-subject
+  .card-body p {
+    font-size: 10px;
+  }
+  .card-user-time {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .card-user-nickname {
+    font-size: 10px;
+  }
+  .favorite-icon {
+    display: inline-block;
+    font-size: 10px;
+  }
+  .text-muted {
+    font-size: 10px;
+  }
+  .btn-light {
+    width: 20%;
+    margin: 0;
+    padding: 0;
+  }
+}
+@media (max-width: 575px) {
+  .card-user {
+    flex-wrap: wrap;
+  }
+  .card-body img {
+    width:  16px;       /* ※縦横を同値に */
+    height: 16px;       /* ※縦横を同値に */   
+    margin: 0px;
+  }
+  .text-muted {
+    align-items: center;
+  }
+}
