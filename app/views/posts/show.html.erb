@@ -1,0 +1,65 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'post' %>
+<% end %>
+<!-- 投稿詳細 -->
+<div class="post-show">
+<div id="post">
+  <div class="container">
+    <!-- 投稿image -->
+    <div class="post-image">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <% @post.portraits.each.with_index(0) do |image, index| %>
+            <% if index == 0 %>
+            <div class="carousel-item active" data-bs-interval="10000">
+              <%= image_tag image.variant(resize_to_limit: [300, 200]), class: 'img-responsive img-rounded carousel-image'%>
+            </div>
+            <% else %>
+            <div class="carousel-item" data-bs-interval="10000">
+              <%= image_tag image.variant(resize_to_limit: [300, 200]), class: 'img-responsive img-rounded carousel-image'%>
+            </div>
+            <% end %>
+          <% end %>
+          
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div><!-- carousel 終了-->
+    </div><!-- 投稿image 終了-->
+  </div><!-- container-->
+</div><!-- post-->
+
+
+
+<div id="post2">
+  <div class="container">
+    <h3 class="post2-title pt-4">コメント</h3>
+    <p class="post2-subject"><%= @post.subject %></p>
+      <div class="row">
+        <div class="post2-user text-center col-3 col-sm-3 col-lg-3 p-0">
+        
+          <span><%= @post.user.nickname %></span>
+        </div>
+        <div class="post2-comment col-9 col-sm-9 col-lg-7 p-md-2">
+          <p class="mt-2 mb-0">・<%= @post.title %><br><%= @post.content %></p>
+          <div class="post2-time">
+            
+            <small class="ml-4"><%= @post.updated_at.strftime("%Y-%m-%d %H:%M") %></small>
+          </div>
+        </div>
+      </div>
+      <div class="index-link my-4 py-4">
+        <% if current_user == @post.user %>
+          <%= link_to '削除する', @post, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-outline-danger" %>
+          <%= link_to '編集する', edit_post_path(@post), class: 'btn btn-outline-success' %>
+        <% end %>
+        <%= link_to '新規作成', new_post_path, class: 'btn btn-outline-secondary' %>
+        <%= link_to 'トップページ', root_path, class: 'btn btn-outline-secondary active' %>
+      </div>
+  </div>
+</div>
+</div>

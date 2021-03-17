@@ -1,0 +1,136 @@
+@charset "utf-8";
+// ユーザー一覧
+.userIndex {
+  min-height: 100vh;
+}
+img {
+  width: 100%;
+}
+.container {
+  width: 90%;
+}
+
+/* ============================= */
+.userIndex {
+  background-color: rgb(255, 254, 254);
+  font-family: serif;
+  line-height: 1.6;
+}
+.userIndex h3 {
+  background-color: rgb(229, 245, 250);
+  padding: 10px 10px;
+}
+// ==リストグループ==============================
+.post-item {
+  display: block;
+  justify-content: right;
+}
+.post-count {
+  font-size: 18px;
+}
+
+.post-count span {
+  margin: 0px 5px;
+}
+.post-from {
+  margin-bottom: 0px;
+}
+
+// .list-group-item >:last-child {
+//   margin-left: auto;
+//   margin-top: auto;
+//   margin-bottom: 0;
+// }
+.list-group-item {
+  align-items: center;
+}
+.list-group-item img {
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  width:  80px;       /* ※縦横を同値に */
+  height: 80px;       /* ※縦横を同値に */
+  border: 1px solid rgb(156, 155, 155);
+  margin: 3px;
+}
+.list-group-item h5 {
+  font-size: 1.5rem;
+  margin-left: 30px;
+}
+.list-group-item p {
+  font-size: 1rem;
+}
+// ページネーション===============================
+
+.pagination>li>a {          
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {     
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
+}
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {        
+  border-radius: 15px;    /*角を丸くする*/
+}
+
+.index-link {
+  text-align: end;
+}
+.index-link .btn {
+  margin-top: 5px;
+}
+
+
+@media (min-width: 1201px) {
+  
+}
+@media (max-width: 1200px) {
+  
+}
+@media (max-width: 992px) {
+  .list-group-item img {
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  60px;       /* ※縦横を同値に */
+    height: 60px;       /* ※縦横を同値に */
+  }
+}
+@media (max-width: 768px) {
+  .list-group-item img {
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  40px;       /* ※縦横を同値に */
+    height: 40px;       /* ※縦横を同値に */
+  }
+  .list-group-item a {
+    font-size: 1rem;
+  }
+  .list-group-item p {
+    font-size: .8rem;
+  }
+  .list-group-item h5 {
+    font-size: 1rem;
+  }
+  .post-count {
+    font-size: 15px;
+  }
+
+}
+@media (max-width: 576px) {
+  .list-group-item img {
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  20px;       /* ※縦横を同値に */
+    height: 20px;       /* ※縦横を同値に */
+  }
+
+  .list-group-item p {
+    font-size: .5rem;
+  }
+  .list-group-item h5 {
+    font-size: .6rem;
+    margin-left: 10px;
+  }
+  .post-count {
+    font-size: .4rem;
+  }
+  
+}

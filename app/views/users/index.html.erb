@@ -1,0 +1,35 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'users' %>
+<% end %>
+<!--  userIndex -->
+  <div class="userIndex">
+    <div class="container">
+      <div class="row">
+      <h3>ユーザー一覧</h3> 
+        <div class="user-index col-12 offset-md-1 col-md-10 col-lg-8 my-4">
+          <% @users.each do |user| %>
+          <div class="user-list">
+            <ul class="list-group list-group-flush">
+              <li class="d-flex list-group-item list-group-item-action list-group-item-light">
+                
+                <h5><%= user.nickname %></h5>
+                <div class="post-item ml-auto">
+                  <p class="post-count">投稿数<span><%= user.posts.count %></span></p>
+                  <p class="post-from mt-auto">from: 大阪</p>
+                </div>  
+              </li>  
+            </ul>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="paginate p-2">
+        <%= paginate @users %>
+      </div>
+      <hr>
+      <div class="index-link my-4">
+        <%= link_to 'トップページ', root_path, class: 'btn btn-outline-secondary active' %>
+        <%= link_to '新規作成', new_post_path, class: 'btn btn-outline-secondary' %>
+      </div>
+    </div>
+  </div>

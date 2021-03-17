@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+// -----編集ページ---------------------------------------------------
+
+img {
+  width: 100%;
+}
+.container {
+  width: 90%;
+}
+.login-title {
+  font-size: 30px;
+}
+.form {
+  font-family: serif;
+  line-height: 1.6;
+  background-color: antiquewhite;
+  width: 100vw;
+  height: 100vh;
+}
+
+.index-link {
+  text-align: end;
+}
+
+@media (min-width: 1201px) {
+  
+}
+@media (max-width: 1200px) {
+  
+}
+@media (max-width: 992px) {
+  
+}
+@media (max-width: 768px) {
+  .login-title {
+    font-size: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .login-title {
+    font-size: 15px;
+  }
+}

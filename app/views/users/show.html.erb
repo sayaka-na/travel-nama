@@ -1,0 +1,91 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'user' %>
+<% end %>
+<% if @user.id == current_user.id %>
+<!-- プロフィール -->
+<div class="userShow">
+  <div class="user">
+    <div class="container">
+      <h2 class="user-title my-4 py-4"><%= @user.nickname %><span>さんのマイページ</span></h2>
+      <div class="row">
+        <div class="user-image text-center col-md-5 my-2">
+          
+          <p class="mt-2">プロフィール画像</p>
+        </div>
+        <div class="username col-md-7 my-md-4">
+          <p class="">ペンネーム：<%= @user.nickname %></p>
+          <p class="">メールアドレス：<%= @user.email %></p>
+          <%= link_to "プロフィール編集", edit_user_path(@user), class: 'btn btn-outline-success' %>
+          <small class="username-favorites mx-3">投稿数<span></span></small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <!-- 投稿リスト -->
+  <div class="post">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="post-index col-md-7 col-lg-6 my-4">
+          <p>最新投稿一覧</p> 
+          <div class="post-list">
+            <ul class="list-group list-group-flush">
+              <% @user.posts.each do |post| %>
+                <li class="list-group-item list-group-item-action list-group-item-light">
+                <div class="post-list-post">
+                  <%= link_to post.title, post_path(post) %>
+                </div> 
+                <div class="post-list-right">
+                  <%= link_to '編集', edit_post_path(post), class: 'btn btn-outline-success btn-sm' %>
+                  <span class="post-list-favorite mt-2 mx-md-3"><i class="far fa-heart"></i></span>
+                  <small class="post-list-time"><%= post.updated_at.strftime("%Y-%m-%d %H:%M") %></small>
+                </div>  
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="post-index col-md-5 col-lg-5 my-4">
+          <p>都道府県別</p> 
+          <div class="post-list">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#">東京</a>
+                <span class="badge bg-secondary rounded-pill">0</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#">大阪</a>
+                <span class="badge bg-secondary rounded-pill">0</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#">愛知</a>
+                <span class="badge bg-secondary rounded-pill">0</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#">神奈川</a>
+                <span class="badge bg-secondary rounded-pill">0</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#">北海道</a>
+                <span class="badge bg-secondary rounded-pill">0</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+  <hr>
+<% else %>
+  <div class="container">
+    <div class="error-message">
+    <h3>本人のみ閲覧可能です。</h3>
+    </div>
+  </div>
+<% end %>
+  <div class="container">
+    <div class="index-link my-3 py-4">
+      <%= link_to 'トップページ', root_path, class: 'btn btn-outline-secondary active' %>
+      <%= link_to '口コミ一覧', posts_path, class: 'btn btn-outline-secondary' %>
+      <%= link_to '新規作成', new_post_path, class: 'btn btn-outline-secondary' %>
+    </div>
+  </div>
+</div>
+
+    
+      

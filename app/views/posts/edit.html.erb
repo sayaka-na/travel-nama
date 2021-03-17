@@ -1,0 +1,42 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'edit' %>
+<% end %>
+
+<div class="form">
+  <div class="container py-4">
+    <h2 class="login-title mb-4">編集ページ</h2>
+      <div class="row text-center">
+        <div class="col-md-8 offset-md-2">
+          <%= form_with(model: @post, local: true) do |f| %>
+          <%= render 'layouts/error_messages', model: f.object %>
+            <div class="form-group">
+              <%= f.label :title, '観光地' %>
+              <%= f.text_field :title, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+                <%= f.label :subject, 'メッセージ' %>
+                <%= f.text_field :subject, class: 'form-control' %>
+              </div>
+            <div class="form-group">
+              <i class="far fa-comment-alt"></i>
+              <%= f.label :content, '口コミ内容' %>
+              <%= f.text_area :content, class: 'form-control' %>
+            </div>
+            <div class="field">
+              <%= f.label :画像 %>
+              <%= f.file_field :portraits, direct_upload: true, multiple: true %>
+            </div>
+            <div class="my-4">
+              <%= f.submit '投稿', class: 'btn btn-success btn-block' %>
+            </div>  
+          <% end %>
+        </div>
+      </div>  
+    
+    <div class="index-link">
+      <%= link_to 'トップページ', root_path, class: 'btn btn-outline-secondary active' %>
+      <%= link_to '投稿一覧へ', posts_path, class: 'btn btn-outline-secondary' %>
+    </div>
+  </div> 
+</div>
+

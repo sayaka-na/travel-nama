@@ -1,0 +1,161 @@
+@charset "utf-8";
+// -投稿詳細------------------------------------------------
+.post-show {
+  min-height: 100vh;
+}
+.container {
+  width: 90%;
+}
+#post {
+  background-color: rgb(248, 243, 238);
+  font-family: serif;
+}
+// ====================
+.post-image {
+  margin: 0 auto;
+}
+.carousel-control-prev, .carousel-control-next {
+  border: none;
+  background: none;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  height: 30px;
+  width: 30px;
+  // outline: black;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid rgb(110, 109, 109);
+}
+.post-image img {
+  width:100%;
+  max-height: 300px;
+  object-fit: contain;
+} 
+// ==post2=================
+#post2 {
+  font-family: serif;
+  background-color: rgb(252, 239, 218);
+  width: 100vw;
+  padding-bottom: 30px;
+}
+.post2-title {
+  display: inline-block;
+}
+// .post2-user {
+//   display: flex;
+//   justify-content: center;
+// }
+.profile_image {
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  width:  40px;       /* ※縦横を同値に */
+  height: 40px;       /* ※縦横を同値に */
+}
+.post2-user span {
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+}
+// ==コメント=============================
+.row {
+  width: 100%;
+}
+.post2-comment {
+  // border: 2px dashed rgb(192, 192, 192);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(70, 69, 69);
+  font-weight: 600;
+  line-height: 1.6;
+  position: relative;
+  display: inline-block;
+  // background-color: #99c0f7;
+  border: 3px solid #99c0f7;
+  border-radius: 10px;
+}
+.post2-comment:before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -30px;
+  border: 15px solid transparent;
+  border-right: 15px solid #99c0f7;
+}
+.post2-time{ 
+  display: block;
+  text-align: right;
+}
+.post2-time a {
+  color: #333;
+}
+// ==========================
+.index-link {
+  text-align: end;
+}
+.index-link .btn {
+  margin-top: 5px;
+}
+
+@media (min-width: 1201px) {
+  
+}
+@media (max-width: 1200px) {
+  .carousel-item img {
+    max-height: 312px;
+  }
+  .post2-user img {
+    width:  30px;       /* ※縦横を同値に */
+    height: 30px;       /* ※縦横を同値に */
+    margin-top: 10px;
+  }
+  .post2-user span {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 992px) {
+  .carousel-item img {
+    max-height: 230px;
+  }
+}
+@media (max-width: 768px) {
+  
+  // .carousel-item img {
+  //   max-height: 170px;
+  // }
+  .post2-title {
+    font-size: 18px;
+  }
+  .post2-subject {
+    font-size: 15px;
+  }
+  // .post2-user {
+  //   align-content: center;
+  // }
+  .post2-comment {
+    font-size: 15px;
+  }
+  .post2-user span {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  // .carousel-item img {
+  //   max-height: 150px;
+  // }
+  .carousel-control-prev span, .carousel-control-next span {
+    width: 20px;
+    height: 20px;
+  }
+  .post2-subject {
+    font-size: 10px;
+  }
+  .post2-comment {
+    font-size: 10px;
+  }
+  .post2-user span {
+    font-size: .6rem;
+  }
+  .post2-user img {
+    width:  20px;       /* ※縦横を同値に */
+    height: 20px;       /* ※縦横を同値に */
+  }
+}

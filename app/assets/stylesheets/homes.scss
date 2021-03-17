@@ -1,0 +1,203 @@
+@charset "utf-8";
+// -------------------------------------------------
+
+img {
+  width: 100%;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+a:hover {
+  opacity: 0.7;
+}
+.container {
+  width: 90%;
+}
+#home {
+  font-family: serif;
+}
+/* main-image============================== */
+.top-image {
+  background-image: url(/assets/main-image.jpg);
+  height: 600px;
+  opacity: 0.7;
+  position: relative;
+}
+.top-title {
+  background: rgba(136, 135, 135, 0.3);
+  color: #fff;
+  border-radius: 2%;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+.top-title h2 {
+  font-size: 30px;
+}
+.top-title p {
+  font-weight: 600;
+}
+/* main */
+.home-main {
+  background-color: rgb(216, 215, 215);
+}
+/* main-title1 */
+.home-main-title1 {
+  text-shadow: 2px 4px 4px rgb(247, 168, 11);
+  font-weight: bold; 
+  text-align: center;
+  font-size: 30px;
+}
+.home-main-osaka img {
+  opacity: 0.8;
+  box-shadow: 10px 15px 5px rgba(0,0,0,0.3);
+}
+.home-main-content1 {
+  display: flex;
+  align-items: center;
+}
+.home-main-content1 p {
+  font-size: 20px;
+}
+/* main-title2 */
+.home-main-title2 {
+  text-shadow: 2px 4px 4px rgb(247, 168, 11);
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+}
+.home-main-fukuoka img {
+  opacity: 0.8;
+  box-shadow: -10px 15px 5px rgba(0,0,0,0.3);
+}
+.home-main-content2 {
+  display: flex;
+  align-items: center;
+}
+.home-main-content2 p {
+  font-size: 20px;
+}
+
+/* comment */
+.home-comment-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+h2 {
+  font-size: 35px;
+  font-weight: 600;
+}
+.home-comment-pic {
+  justify-content: center;
+}
+.fa-image {
+  font-size: 170px;
+  padding: 5px;
+  border: 2px solid rgb(163, 163, 163);
+}
+.home-comment-com {
+  border: 3px solid rgb(182, 180, 180);
+  border-radius: 30px;
+  justify-content: center;
+  position: relative;
+  /* display: inline-block; */
+  box-sizing: border-box;
+}
+.home-comment-com:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -24px;
+  margin-top: -12px;
+  border: 12px solid transparent;
+  border-right: 12px solid #fff;
+  z-index: 2;
+}
+.home-comment-com:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -14px;
+  border: 14px solid transparent;
+  border-right: 14px solid rgb(182, 180, 180);
+  z-index: 1;
+}
+/* sidebar */
+.btn-group:hover >.dropdown-menu {
+  display: block;
+}
+
+.home-side {
+  // border: 2px solid rgb(182, 180, 180);
+  justify-content: center;
+  padding: 0;
+}
+.home-side h4 {
+  font-weight: 600;
+  background-color: rgb(194, 192, 192);
+  padding: 10px 8px;
+}
+.btn-group {
+  margin: 10px;
+}
+.btn-group button {
+  padding: 8px 40px;
+}
+
+
+@media (min-width: 1201px) {
+  
+}
+@media (max-width: 1200px) {
+
+}
+@media (max-width: 992px) {
+  .dropdown-menu {
+    height: auto;
+    max-height: 120px;
+    overflow-x: hidden;
+  }
+}
+@media (max-width: 768px) {
+  .top-title {
+    top: 20%;
+    left: 3%;
+    right: 30%;
+  }
+  .top-title h2 {
+    font-size: 26px;
+  }
+  .top-title p {
+    font-size: 15px;
+  }
+  .fa-image {
+    font-size: 300px;
+  }
+  .home-comment-content {
+    justify-content: center;
+  }
+  .home-comment-content1 {
+    justify-content: center;
+  }
+  
+
+}
+@media (max-width: 576px) {
+  .top-title {
+    top: 20%;
+    left: 3%;
+    right: 5%;
+  }
+  .top-title h2 {
+    font-size: 22px;
+  }
+  .top-title p {
+    font-size: 12px;
+  }
+}

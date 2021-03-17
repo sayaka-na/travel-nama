@@ -1,0 +1,18 @@
+<footer class="mt-2">
+  <div class="container px-0">
+    <div class="footer-logo text-center mb-4">
+      <img src="/assets/logo.png" alt="ロゴ" class="pt-3">
+    </div>
+    <ul class="footer-list text-center mt-4 pb-3 pl-0">
+      <li class="nav-item"><%= link_to 'トップページ', root_path, class: 'nav-link' %>
+    <% if logged_in? %>
+      <li class="nav-item"><%= link_to 'マイページ', user_path(current_user), class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to '口コミ一覧', posts_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to '新規投稿', new_post_path, class: 'nav-link' %></li>
+    <% else %>
+      <li class="nav-item"><%= link_to '会員登録', signup_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'ログイン', login_path, class: 'nav-link' %></li>
+    <% end %>
+    </ul>
+  </div>
+</footer>

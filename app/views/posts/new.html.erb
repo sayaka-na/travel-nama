@@ -1,0 +1,39 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'new' %>
+<% end %>
+  <div class="form">
+    <div class="container py-4">
+      <h2 class="login-title mb-4">新規作成ページ</h2>
+        <div class="row text-center">
+          <div class="col-md-8 offset-md-2">
+            <%= form_with(model: @post, local: true) do |f| %>
+              <%= render 'layouts/error_messages', model: f.object %>
+              <div class="form-group">
+                <%= f.label :title, '観光先' %>
+                <%= f.text_field :title, class: 'form-control', placeholder: '例、東京スカイツリー、道頓堀' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :subject, 'メッセージ' %>
+                <%= f.text_field :subject, class: 'form-control', placeholder: '例、景色が良かった、たこ焼きが美味しかった' %>
+              </div>
+              <div class="form-group">
+                <i class="far fa-comment-alt" aria-hidden="true"></i>
+                <%= f.label :content, '口コミ内容' %>
+                <%= f.text_area :content, class: 'form-control' %>
+              </div>
+              <div class="field">
+                <%= f.label :画像 %>
+                <%= f.file_field :portraits, direct_upload: true, multiple: true %>
+              </div>
+              <div class="my-4">
+                <%= f.submit '投稿', class: 'btn btn-success' %>
+              </div>  
+            <% end %>
+          </div>
+        </div>      
+        
+    </div> 
+  </div>
+  
+
+

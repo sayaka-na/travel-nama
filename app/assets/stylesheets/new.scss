@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+// font-family: "Font Awesome 5 Free";
+// --------------------------------------------------------
+img {
+  width: 100%;
+}
+.container {
+  width: 90%;
+}
+// ==========================
+.login-title {
+  font-size: 30px;
+}
+.form {
+  font-family: serif;
+  line-height: 1.6;
+  width: 100vw;
+  height: 100vh;
+  background-color: antiquewhite;
+}
+.btn-success {
+  width: 30%;
+}
+.index-link {
+  text-align: end;
+}
+
+@media (min-width: 1201px) {
+  
+}
+@media (max-width: 1200px) {
+  
+}
+@media (max-width: 992px) {
+  
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 576px) {
+  
+}
