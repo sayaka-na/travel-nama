@@ -52,7 +52,7 @@
           <p class="mt-2 mb-0">・<%= @post.title %><br><%= @post.content %></p>
           <div class="post2-time">
             <% if current_user.like?(@post) %>
-              いいね<%= link_to post_favorite_path(@post), method: :delete do %>
+              いいね<%= link_to post_favorites_path(@post), method: :delete do %>
                 <i class="fas fa-heart"></i>
               <% end %>
             <% else %>

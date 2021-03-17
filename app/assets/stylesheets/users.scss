@@ -25,10 +25,9 @@ img {
   display: block;
   justify-content: right;
 }
-.post-count {
+.post-item p {
   font-size: 18px;
 }
-
 .post-count span {
   margin: 0px 5px;
 }
@@ -48,7 +47,7 @@ img {
   border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
   width:  80px;       /* ※縦横を同値に */
   height: 80px;       /* ※縦横を同値に */
-  border: 1px solid rgb(156, 155, 155);
+  border: 2px solid rgb(201, 200, 200);
   margin: 3px;
 }
 .list-group-item h5 {
@@ -110,7 +109,7 @@ img {
   .list-group-item h5 {
     font-size: 1rem;
   }
-  .post-count {
+  .post-item p {
     font-size: 15px;
   }
 
@@ -129,7 +128,7 @@ img {
     font-size: .6rem;
     margin-left: 10px;
   }
-  .post-count {
+  .post-item p {
     font-size: .4rem;
   }
   

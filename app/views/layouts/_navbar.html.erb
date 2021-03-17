@@ -101,7 +101,7 @@
             <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-item"><%= link_to 'マイページ', user_path(current_user), class: 'dropdown-link' %></li>
               <li class="dropdown-item"><%= link_to 'ユーザー一覧', users_path, class: 'dropdown-link' %></li>
-              
+              <li class="dropdown-item"><%= link_to 'お気に入り一覧', likes_user_path(current_user), class: 'dropdown-link' %></li>
               
               <li class="dropdown-item"><%= link_to '新規作成', new_post_path, class: 'dropdown-link' %></li>
               <li class="dropdown-divider"></li>

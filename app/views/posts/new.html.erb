@@ -9,11 +9,11 @@
             <%= form_with(model: @post, local: true) do |f| %>
               <%= render 'layouts/error_messages', model: f.object %>
               <div class="form-group">
-                <%= f.label :title, '観光先' %>
+                <%= f.label :title, '観光先 ※10文字以内' %>
                 <%= f.text_field :title, class: 'form-control', placeholder: '例、東京スカイツリー、道頓堀' %>
               </div>
               <div class="form-group">
-                <%= f.label :subject, 'メッセージ' %>
+                <%= f.label :subject, 'メッセージ ※20文字以内' %>
                 <%= f.text_field :subject, class: 'form-control', placeholder: '例、景色が良かった、たこ焼きが美味しかった' %>
               </div>
               <div class="form-group">
@@ -22,7 +22,7 @@
                 <%= f.text_area :content, class: 'form-control' %>
               </div>
               <div class="field">
-                <%= f.label :画像 %>
+                <%= f.label :portraits, '※5枚まで' %>
                 <%= f.file_field :portraits, direct_upload: true, multiple: true %>
               </div>
               <div class="my-4">

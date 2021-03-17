@@ -13,13 +13,13 @@
           
           <div class="form-group">
             <i class="fas fa-user-alt" aria-hidden="true"></i>
-            <%= f.label :name, '名前' %>
+            <%= f.label :name, '名前 ※10文字以内' %>
             <%= f.text_field :name, class: 'form-control', placeholder: '本名' %>
           </div>
           
           <div class="form-group">
             <i class="far fa-frown-open" aria-hidden="true"></i>
-            <%= f.label :nickname, 'ペンネーム' %>
+            <%= f.label :nickname, 'ペンネーム ※10文字以内' %>
             <%= f.text_field :nickname, class: 'form-control', placeholder: 'みかん' %>
           </div>
     
@@ -41,7 +41,7 @@
             <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'パスワード確認' %>
           </div>
           <div class="field">
-            <%= f.label :プロフィール画像 %>
+            <%= f.label :profile_image, 'プロフィール画像'%>
             <%= f.file_field :profile_image, direct_upload: true %>
           </div>
           <div class="form-btn my-4 py-4">

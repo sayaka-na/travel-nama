@@ -14,12 +14,12 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      flash[:success] = 'Postが正常に投稿されました'
+      flash[:success] = '口コミが投稿されました！'
       redirect_to @post
       # showルーティング（posts/:id）に飛ばす
     else
       @posts = current_user.posts.order(id: :desc).page(params[:page])
-      flash.now[:danger] = 'Postが投稿されませんでした'
+      flash.now[:danger] = '投稿に失敗しました。'
       render :new
     end
   end
@@ -30,17 +30,17 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      flash[:success] = 'Postが正常に更新されました'
+      flash[:success] = '口コミ内容が更新されました'
       redirect_to @post
     else
-      flash[:danger] = 'Postが更新されませんでした'
+      flash[:danger] = '口コミ内容の更新に失敗しました。'
       render :edit
     end
   end
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    flash[:success] = 'メッセージを削除しました。'
+    flash[:danger] = '口コミを削除しました。'
     redirect_to root_url
   end
 
