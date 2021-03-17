@@ -41,8 +41,12 @@
     <p class="post2-subject"><%= @post.subject %></p>
       <div class="row">
         <div class="post2-user text-center col-3 col-sm-3 col-lg-3 p-0">
-        
-          <span><%= @post.user.nickname %></span>
+        <% if @post.user.profile_image.attached? %>
+          <%= image_tag @post.user.profile_image.variant(resize_to_limit: [200, 200]),  :class => "profile_image", :alt => 'プロフィール画像' %>
+        <% else %>
+          <%= image_tag "/assets/default.png", :class => "profile_image", :alt => 'プロフィール画像' %>
+        <% end %>
+        <span><%= @post.user.nickname %></span>
         </div>
         <div class="post2-comment col-9 col-sm-9 col-lg-7 p-md-2">
           <p class="mt-2 mb-0">・<%= @post.title %><br><%= @post.content %></p>

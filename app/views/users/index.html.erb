@@ -11,7 +11,11 @@
           <div class="user-list">
             <ul class="list-group list-group-flush">
               <li class="d-flex list-group-item list-group-item-action list-group-item-light">
-                
+                <% if user.profile_image.attached? %>
+                  <%= image_tag user.profile_image.variant(resize_to_limit: [200, 200]),  :class => "profile_image", :alt => 'プロフィール画像' %>
+                <% else %>
+                  <%= image_tag "/assets/default.png", :class => "profile_image", :alt => 'プロフィール画像' %>
+                <% end %>
                 <h5><%= user.nickname %></h5>
                 <div class="post-item ml-auto">
                   <p class="post-count">投稿数<span><%= user.posts.count %></span></p>

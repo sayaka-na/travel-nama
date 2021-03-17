@@ -6,4 +6,5 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   has_many :posts, dependent: :destroy
+  has_one_attached :profile_image
 end

@@ -9,7 +9,11 @@
       <h2 class="user-title my-4 py-4"><%= @user.nickname %><span>さんのマイページ</span></h2>
       <div class="row">
         <div class="user-image text-center col-md-5 my-2">
-          
+        <% if @user.profile_image.attached? %>
+          <%= image_tag @user.profile_image.variant(resize_to_limit: [200, 200]),  :class => "profile_image", :alt => 'プロフィール画像' %>
+        <% else %>
+          <%= image_tag "/assets/default.png", :class => "profile_image", :alt => 'プロフィール画像' %>
+        <% end %>
           <p class="mt-2">プロフィール画像</p>
         </div>
         <div class="username col-md-7 my-md-4">
