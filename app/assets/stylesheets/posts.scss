@@ -15,7 +15,7 @@ a {
   color: #333;
 }
 a:hover {
-  opacity: 0.7;
+  opacity: 0.7 !important;
 }
 .container {
   width: 90%;
@@ -46,14 +46,17 @@ a:hover {
 .card-user {
   align-items: center;
 }
-
+.card-user-time a {
+  text-decoration: none;
+}
 .favorite-icon {
   font-size: 18px;
   display: inline-block;
-  margin: 3px 5px;
+  margin: 3px 0px;
 }
 .fa-heart {
   margin-right: 3px;
+  color: #333;
 }
 .card-body img {
   border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
@@ -107,11 +110,10 @@ a:hover {
   .card-user-nickname {
     font-size: 15px;
   }
-  .favorite-icon {
-    font-size: 15px;
-  }
+  
   .fa-heart {
     margin-right: 2px;
+    font-size: 15px;
   }
   // card-subject
   .card-body p {
@@ -143,6 +145,10 @@ a:hover {
     font-size: 10px;
   }
   .favorite-icon {
+    font-size: 12px;
+    margin-right: 3px;
+  }
+  .fa-heart {
     display: inline-block;
     font-size: 10px;
   }

@@ -39,9 +39,17 @@
                               <% end %>
                               <div class="card-user-nickname"><%= post.user.nickname %></div>
                             </div>
-                              
                             <div class="card-user-time ms-auto p-md-2">
-                              <span class="favorite-icon mt-sm-2"><i class="far fa-heart"></i></span>
+                              <% if current_user.like?(post) %>
+                                <%= link_to post_favorites_path(post), method: :delete do %>
+                                  <i class="fas fa-heart"></i>
+                                <% end %>
+                              <% else %>
+                                <%= link_to post_favorites_path(post), method: :post do %>
+                                  <i class="far fa-heart"></i>
+                                <% end %>
+                              <% end %>
+                              <span class="favorite-icon mt-sm-2"><%= post.likers.count %></span>
                               <small class="text-muted"><%= post.updated_at.strftime("%Y-%m-%d %H:%M") %></small>
                             <% if current_user == post.user %>
                               <%= link_to post, class: "btn btn-light btn-sm", method: :delete, data: { confirm: "本当に削除しますか？" } do %><i class="far fa-trash-alt"></i>

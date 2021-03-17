@@ -39,6 +39,11 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  def likes
+    @user = User.find(params[:id])
+    @likes = @user.likes.page(params[:page])
+  end
   
   private
 
